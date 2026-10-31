@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clinic Lunch-Hour Workshop | Badger Mind</title>
+<meta name="description" content="A 1-hour live workshop for dental clinic owners: streamline bookings and appointments, and build your Instagram, Google and website presence using free ChatGPT and Claude. 7 Nov 2026, 1–2 PM IST. 10 seats, ₹299.">
+<meta name="theme-color" content="#0b2f7a">
+<meta property="og:title" content="Clinic Lunch-Hour Workshop by Badger Mind">
+<meta property="og:description" content="Streamline your clinic and grow your digital presence with free AI tools. 7 Nov, 1–2 PM IST. Only 10 seats at ₹299.">
+<meta property="og:url" content="https://badgermind.in/workshop/">
+<link rel="icon" href="/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2a6e;--navy2:#071d4f;--deep:#07132b;--royal:#1450c8;--blue:#1e67d6;--sky:#8ec2ff;--ice:#e6effd;
+  --bg:#f5f8fd;--ink:#0a1f4d;--mute:#4b5d7f;--card:#fff;--line:#d9e3f2;--gold:#f5b942;--gold2:#ffd77a;
+  --shadow:0 1px 2px rgba(10,31,77,.06),0 8px 28px rgba(10,31,77,.08);
+  --display:"Sora","Plus Jakarta Sans",system-ui,sans-serif;--text:"Plus Jakarta Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--text);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--royal);color:#fff;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;transition:transform .15s,background .15s;box-shadow:0 8px 24px rgba(20,80,200,.35)}
+.btn:hover{background:var(--blue);transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:var(--deep);box-shadow:0 8px 24px rgba(245,185,66,.35)}
+.btn.gold:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35);box-shadow:none}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,19,43,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-weight:800;color:#fff;text-decoration:none;font-size:1.1rem}
+.brand span{color:var(--sky)}
+.top .btn{padding:10px 18px;font-size:.9rem}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 80% -10%,rgba(30,103,214,.45),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(245,185,66,.14),transparent 60%),linear-gradient(180deg,var(--deep),var(--navy2));color:#e8f0ff;padding:64px 0 72px}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,215,122,.55) 1px,transparent 1.5px);background-size:46px 46px;opacity:.12;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .9fr;gap:44px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(245,185,66,.14);color:var(--gold2);border:1px solid rgba(245,185,66,.35);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.85rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.25rem);color:#fff;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:1.1rem;color:#c9d8f5;max-width:560px;margin-bottom:26px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:.95rem;color:#c9d8f5}
+.facts b{color:#fff}
+
+.ticket{background:linear-gradient(180deg,#fff,#f3f7ff);color:var(--ink);border-radius:22px;padding:26px;box-shadow:0 30px 60px rgba(0,0,0,.35);position:relative}
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--navy2);top:58%}
+.ticket::before{left:-13px}.ticket::after{right:-13px}
+.ticket .t-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);font-weight:700}
+.ticket .price{font-family:var(--display);font-size:3rem;font-weight:800;color:var(--navy);line-height:1;margin:6px 0 2px}
+.ticket .price small{font-size:1rem;color:var(--mute);font-weight:600}
+.ticket ul{list-style:none;margin:16px 0;border-top:1.5px dashed var(--line);padding-top:16px}
+.ticket li{display:flex;gap:10px;padding:5px 0;font-size:.95rem}
+.ticket li::before{content:"✓";color:var(--royal);font-weight:800}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 18px}
+.count div{background:var(--ice);border-radius:12px;text-align:center;padding:8px 4px}
+.count b{display:block;font-family:var(--display);font-size:1.35rem;color:var(--navy)}
+.count span{font-size:.7rem;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.ticket .btn{width:100%}
+.seats{text-align:center;font-size:.85rem;color:#b3262b;font-weight:700;margin-top:10px}
+
+/* sections */
+section{padding:72px 0}
+.eyebrow{color:var(--royal);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.sec-h{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:14px}
+.sec-p{color:var(--mute);max-width:640px;font-size:1.05rem}
+
+.pain{background:#fff}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.pain-card{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--bg)}
+.pain-card .ico{font-size:1.6rem;margin-bottom:8px}
+.pain-card h3{font-size:1.05rem;margin-bottom:6px}
+.pain-card p{color:var(--mute);font-size:.95rem}
+
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.learn{background:var(--card);border-radius:20px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--line);position:relative}
+.learn .num{position:absolute;top:22px;right:24px;font-family:var(--display);font-weight:800;font-size:2rem;color:var(--ice)}
+.learn h3{font-size:1.2rem;margin-bottom:10px;padding-right:44px}
+.learn ul{list-style:none}
+.learn li{padding:5px 0 5px 24px;position:relative;color:var(--mute);font-size:.97rem}
+.learn li::before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--royal)}
+
+.agenda{background:linear-gradient(180deg,var(--navy2),var(--deep));color:#e8f0ff}
+.agenda .eyebrow{color:var(--gold)}
+.agenda .sec-p{color:#b9cbef}
+.timeline{margin-top:34px;display:grid;gap:12px}
+.slot{display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 22px}
+.slot .time{font-family:var(--display);font-weight:700;color:var(--gold2)}
+.slot h3{font-size:1.05rem;color:#fff;margin-bottom:3px}
+.slot p{color:#b9cbef;font-size:.95rem}
+
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.who{border-radius:20px;padding:26px;border:1px solid var(--line);background:#fff}
+.who.no{background:var(--bg)}
+.who h3{font-size:1.1rem;margin-bottom:12px}
+.who li{list-style:none;padding:6px 0 6px 28px;position:relative;color:var(--mute)}
+.who.yes li::before{content:"✓";position:absolute;left:0;color:#178a4c;font-weight:800}
+.who.no li::before{content:"✕";position:absolute;left:0;color:#b3262b;font-weight:800}
+
+.host{background:#fff}
+.host-box{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:30px}
+.avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--royal),var(--navy));display:grid;place-items:center;font-size:2.4rem}
+.host-box p{color:var(--mute)}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:14px}
+.stats b{font-family:var(--display);font-size:1.4rem;color:var(--navy);display:block}
+.stats span{font-size:.85rem;color:var(--mute)}
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.3rem;color:var(--royal);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--mute);margin-top:10px}
+
+.register{background:radial-gradient(800px 380px at 50% 0%,rgba(30,103,214,.4),transparent 60%),linear-gradient(180deg,var(--navy2),var(--deep));color:#fff;text-align:center}
+.register h2{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:12px}
+.register p{color:#c9d8f5;max-width:560px;margin:0 auto 26px}
+.pay-box{background:#fff;color:var(--ink);max-width:440px;margin:0 auto;border-radius:22px;padding:28px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.pay-box .price{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--navy)}
+.pay-box .meta{color:var(--mute);font-size:.95rem;margin-bottom:18px}
+.rzp-wrap{min-height:52px;display:flex;justify-content:center}
+.pay-note{font-size:.82rem;color:var(--mute);margin-top:14px}
+.wa{display:inline-block;margin-top:16px;color:#178a4c;font-weight:700;text-decoration:none}
+
+footer{background:var(--deep);color:#8fa3c9;text-align:center;padding:28px 20px 96px;font-size:.9rem}
+footer a{color:#c9d8f5;text-decoration:none}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(7,19,43,.96);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;gap:12px;color:#fff}
+.sticky small{display:block;color:#b9cbef;font-size:.78rem}
+.sticky b{font-family:var(--display)}
+.sticky .btn{padding:12px 20px;font-size:.95rem;white-space:nowrap}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .pain-grid{grid-template-columns:1fr}
+  .learn-grid,.who-grid{grid-template-columns:1fr}
+  .slot{grid-template-columns:1fr;gap:4px}
+  .host-box{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .stats{justify-content:center}
+  .sticky{display:flex}
+  .top .btn{display:none}
+  section{padding:56px 0}
+  .hero{padding:44px 0 56px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://badgermind.in/">Badger<span>Mind</span></a>
+    <a class="btn" href="#register">Book my seat · ₹299</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="pill">🪔 Diwali special · Live online workshop</div>
+      <h1>A calmer clinic and a stronger online presence, <em>in one lunch hour.</em></h1>
+      <p class="lead">A practical 1-hour session for dental clinic owners: streamline bookings and appointments, and use the <b>free</b> versions of ChatGPT and Claude to write your Instagram captions, Google posts and SEO content.</p>
+      <div class="ctas">
+        <a class="btn gold" href="#register">Reserve my seat for ₹299</a>
+        <a class="btn ghost" href="#learn">See what you'll learn</a>
+      </div>
+      <div class="facts">
+        <span>📅 <b>Sat, 7 Nov 2026</b></span>
+        <span>🕐 <b>1:00 – 2:00 PM IST</b></span>
+        <span>💻 <b>Live online</b></span>
+        <span>🪑 <b>Only 10 seats</b></span>
+      </div>
+    </div>
+
+    <aside class="ticket" aria-label="Workshop ticket">
+      <div class="t-label">Workshop seat</div>
+      <div class="price">₹299 <small>/ seat</small></div>
+      <div class="count" id="countdown" aria-live="polite">
+        <div><b id="cd-d">0</b><span>Days</span></div>
+        <div><b id="cd-h">0</b><span>Hrs</span></div>
+        <div><b id="cd-m">0</b><span>Min</span></div>
+        <div><b id="cd-s">0</b><span>Sec</span></div>
+      </div>
+      <ul>
+        <li>1 hour, right in your lunch break</li>
+        <li>Clinic process &amp; automation basics</li>
+        <li>Instagram, Google &amp; SEO with free AI</li>
+        <li>Live Q&amp;A on your own clinic</li>
+      </ul>
+      <a class="btn" href="#register">Book my seat</a>
+      <div class="seats">Limited to 10 clinic owners</div>
+    </aside>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap">
+    <div class="eyebrow">Sound familiar?</div>
+    <h2 class="sec-h">You're a great dentist. The clinic runs you.</h2>
+    <p class="sec-p">Most solo and small clinics lose patients in the same few places, and none of them are clinical.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="ico">📞</div><h3>Missed calls &amp; messages</h3><p>Enquiries come in while you're with a patient, and nobody calls back.</p></div>
+      <div class="pain-card"><div class="ico">🪑</div><h3>Empty chairs</h3><p>No-shows and last-minute cancels leave gaps you can't fill.</p></div>
+      <div class="pain-card"><div class="ico">📱</div><h3>Instagram on hold</h3><p>You know you should post, but there's no time and no idea what to write.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="learn">
+  <div class="wrap">
+    <div class="eyebrow">What you'll learn</div>
+    <h2 class="sec-h">Four things you can start using the same evening.</h2>
+    <p class="sec-p">No jargon, no paid software. Everything works with WhatsApp Business, a Google Sheet and free AI tools.</p>
+    <div class="learn-grid">
+      <div class="learn"><span class="num">01</span>
+        <h3>Streamline bookings &amp; appointments</h3>
+        <ul><li>A simple routine so no enquiry is left unanswered</li><li>Reminders that cut no-shows</li><li>Following up treatment plans without chasing</li></ul>
+      </div>
+      <div class="learn"><span class="num">02</span>
+        <h3>Automate the boring, keep the caring</h3>
+        <ul><li>What to hand to your phone and what to keep human</li><li>WhatsApp Business quick replies and labels</li><li>A free tracking sheet for your front desk</li></ul>
+      </div>
+      <div class="learn"><span class="num">03</span>
+        <h3>Instagram captions &amp; content with free AI</h3>
+        <ul><li>Using free ChatGPT and Claude to plan a month of posts</li><li>Caption formats that educate patients</li><li>Reel ideas from your everyday clinic moments</li></ul>
+      </div>
+      <div class="learn"><span class="num">04</span>
+        <h3>SEO content for Google &amp; your website</h3>
+        <ul><li>Writing Google Business Profile posts that get found</li><li>Simple SEO content for treatment pages</li><li>Staying within your council's advertising rules</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda">
+  <div class="wrap">
+    <div class="eyebrow">The hour, minute by minute</div>
+    <h2 class="sec-h">Built to fit your lunch break.</h2>
+    <p class="sec-p">Join from your clinic or phone. We start on time and finish on time.</p>
+    <div class="timeline">
+      <div class="slot"><div class="time">1:00 – 1:10</div><div><h3>Where your clinic is leaking</h3><p>The common gaps in calls, bookings, no-shows and follow-ups.</p></div></div>
+      <div class="slot"><div class="time">1:10 – 1:25</div><div><h3>Streamline &amp; automate the process</h3><p>Booking routines, reminders and what to automate with free tools.</p></div></div>
+      <div class="slot"><div class="time">1:25 – 1:45</div><div><h3>Digital presence with free ChatGPT &amp; Claude</h3><p>Live demo: Instagram captions, post ideas and SEO content for your clinic.</p></div></div>
+      <div class="slot"><div class="time">1:45 – 2:00</div><div><h3>Your questions, answered</h3><p>Bring a problem from your own clinic. Small group, so everyone gets heard.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Is this for you?</div>
+    <h2 class="sec-h">Made for busy clinic owners.</h2>
+    <div class="who-grid">
+      <div class="who yes"><h3>This is for you if…</h3>
+        <ul><li>You run a solo or small dental clinic</li><li>You handle bookings and appointments yourself</li><li>You want to post on Instagram but never find time</li><li>You've never used ChatGPT or Claude, or only a little</li></ul>
+      </div>
+      <div class="who no"><h3>Probably not for you if…</h3>
+        <ul><li>You want a done-for-you agency service</li><li>You're looking for guaranteed patient numbers</li><li>You already have a full-time marketing team</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOST -->
+<section class="host">
+  <div class="wrap">
+    <div class="host-box">
+      <div class="avatar" aria-hidden="true">🦡</div>
+      <div>
+        <div class="eyebrow">Your host</div>
+        <h2 class="sec-h" style="font-size:1.6rem">Badger Mind</h2>
+        <p>I help dental and skin clinics find where the rupees are leaking, fix the routine first, and automate only what needs it. Sales experience, not slide decks.</p>
+        <div class="stats">
+          <div><b>10+</b><span>years in sales</span></div>
+          <div><b>20+</b><span>customers served</span></div>
+          <div><b>12</b><span>clinic routines</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap" style="max-width:780px">
+    <div class="eyebrow">Questions</div>
+    <h2 class="sec-h">Good to know.</h2>
+    <details><summary>Do I need to be good with technology?</summary><p>No. If you can use WhatsApp, you can follow along. Everything is shown step by step.</p></details>
+    <details><summary>Do I need to pay for ChatGPT or Claude?</summary><p>No. The whole session uses the free versions.</p></details>
+    <details><summary>How will I join?</summary><p>It's a live online session. After you pay, the joining link is sent to the phone number and email you give at checkout.</p></details>
+    <details><summary>Why only 10 seats?</summary><p>So there's time to answer questions about your own clinic. Once 10 seats are filled, registrations close.</p></details>
+    <details><summary>I have a question before I book.</summary><p>Message us on WhatsApp at <a href="https://wa.me/918056327917">80563 27917</a> and we'll reply.</p></details>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <div class="wrap">
+    <h2>Grab one of the 10 seats.</h2>
+    <p>Saturday, 7 November · 1:00 – 2:00 PM IST · Live online</p>
+    <div class="pay-box">
+      <div class="price">₹299</div>
+      <div class="meta">One seat · Clinic Lunch-Hour Workshop</div>
+      <div class="rzp-wrap">
+        <!-- RAZORPAY PAYMENT BUTTON -->
+        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TuSlqEiGhfcihc" async></script></form>
+      </div>
+      <div class="pay-note">Secure payment via Razorpay (UPI, cards, net banking). Your joining link is sent after payment.</div>
+      <a class="wa" href="https://wa.me/918056327917?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%207%20Nov%20clinic%20workshop" target="_blank" rel="noopener">💬 Questions? Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <b style="color:#fff">Badger Mind</b> · Turning Business Chaos into Growth<br>
+  <a href="tel:+918056327917">8056327917</a> · <a href="mailto:contact@badgermind.in">contact@badgermind.in</a> · <a href="https://badgermind.in/">badgermind.in</a>
+</footer>
+
+<div class="sticky">
+  <div><small>Sat 7 Nov · 1–2 PM · 10 seats</small><b>₹299 / seat</b></div>
+  <a class="btn gold" href="#register">Book my seat</a>
+</div>
+
+<script>
+(function(){
+  var target=new Date("2026-11-07T13:00:00+05:30").getTime();
+  var el={d:document.getElementById("cd-d"),h:document.getElementById("cd-h"),m:document.getElementById("cd-m"),s:document.getElementById("cd-s")};
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){document.getElementById("countdown").innerHTML='<div style="grid-column:1/-1"><b>Live now</b><span>or already done</span></div>';return;}
+    el.d.textContent=Math.floor(diff/864e5);
+    el.h.textContent=Math.floor(diff/36e5)%24;
+    el.m.textContent=Math.floor(diff/6e4)%60;
+    el.s.textContent=Math.floor(diff/1e3)%60;
+    setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

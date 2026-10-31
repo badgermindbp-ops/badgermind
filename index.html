@@ -513,5 +513,80 @@ document.getElementById('gx').addEventListener('click',function(){dlg.close?dlg.
 dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
 })();
 </script>
+<!-- ============================================================
+  BADGER MIND · Workshop popup for badgermind.in
+  Paste this whole block just before </body> on the main site
+  (Elementor Pro: Custom Code → Location "Body - End", or a
+  footer HTML widget). It shows 3 seconds after the page loads,
+  once per visit, and stops showing after the workshop starts.
+  Change WORKSHOP_URL if the landing page lives elsewhere.
+============================================================ -->
+<style>
+#bm-wpop{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,14,34,.72);backdrop-filter:blur(4px);font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+#bm-wpop.show{display:flex;animation:bmFade .25s ease}
+#bm-wpop .bm-card{position:relative;max-width:420px;width:100%;border-radius:22px;overflow:hidden;background:#fff;color:#0a1f4d;box-shadow:0 30px 70px rgba(0,0,0,.45);cursor:pointer;animation:bmUp .3s ease}
+#bm-wpop .bm-top{background:radial-gradient(500px 220px at 85% 0%,rgba(30,103,214,.55),transparent 60%),linear-gradient(180deg,#07132b,#071d4f);color:#fff;padding:26px 24px 22px}
+#bm-wpop .bm-pill{display:inline-block;background:rgba(245,185,66,.16);color:#ffd77a;border:1px solid rgba(245,185,66,.4);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;margin-bottom:12px}
+#bm-wpop h3{font-family:"Sora","Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;line-height:1.2;margin:0 0 8px;color:#fff}
+#bm-wpop h3 em{font-style:normal;color:#f5b942}
+#bm-wpop .bm-top p{margin:0;color:#c9d8f5;font-size:.95rem;line-height:1.5}
+#bm-wpop .bm-body{padding:18px 24px 22px}
+#bm-wpop .bm-row{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;padding:6px 0;border-bottom:1px dashed #d9e3f2}
+#bm-wpop .bm-row b{color:#0a2a6e}
+#bm-wpop .bm-btn{display:block;text-align:center;margin-top:16px;background:#1450c8;color:#fff;text-decoration:none;font-weight:700;padding:14px;border-radius:999px;box-shadow:0 8px 22px rgba(20,80,200,.35)}
+#bm-wpop .bm-btn:hover{background:#1e67d6}
+#bm-wpop .bm-close{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer;z-index:2}
+#bm-wpop .bm-close:hover{background:rgba(255,255,255,.28)}
+@keyframes bmFade{from{opacity:0}to{opacity:1}}
+@keyframes bmUp{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+</style>
+
+<div id="bm-wpop" role="dialog" aria-modal="true" aria-labelledby="bm-wpop-title">
+  <div class="bm-card" id="bm-wpop-card">
+    <button class="bm-close" id="bm-wpop-close" aria-label="Close">×</button>
+    <div class="bm-top">
+      <span class="bm-pill">🪔 Diwali special workshop</span>
+      <h3 id="bm-wpop-title">Streamline your clinic &amp; grow online, <em>in one lunch hour.</em></h3>
+      <p>Bookings, automation, Instagram captions and SEO using free ChatGPT &amp; Claude.</p>
+    </div>
+    <div class="bm-body">
+      <div class="bm-row"><span>📅 Date</span><b>Sat, 7 Nov 2026</b></div>
+      <div class="bm-row"><span>🕐 Time</span><b>1:00 – 2:00 PM IST</b></div>
+      <div class="bm-row"><span>🪑 Seats</span><b>Only 10 · ₹299</b></div>
+      <a class="bm-btn" id="bm-wpop-cta" href="/workshop/">Reserve my seat →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var WORKSHOP_URL = "/workshop/";                               // landing page address
+  var ENDS = new Date("2026-11-07T13:00:00+05:30").getTime();     // stop showing after this
+  var DELAY_MS = 3000;
+  var KEY = "bm_workshop_popup_seen";
+
+  if (Date.now() > ENDS) return;
+  if (location.pathname.replace(/\/+$/,"") === WORKSHOP_URL.replace(/\/+$/,"")) return;
+  try { if (sessionStorage.getItem(KEY)) return; } catch(e) {}
+
+  var pop = document.getElementById("bm-wpop");
+  var card = document.getElementById("bm-wpop-card");
+  document.getElementById("bm-wpop-cta").href = WORKSHOP_URL;
+
+  function close(){ pop.classList.remove("show"); try{ sessionStorage.setItem(KEY,"1"); }catch(e){} }
+  function go(){ try{ sessionStorage.setItem(KEY,"1"); }catch(e){} window.location.href = WORKSHOP_URL; }
+
+  card.addEventListener("click", function(e){
+    if (e.target.closest("#bm-wpop-close")) { e.stopPropagation(); close(); return; }
+    e.preventDefault(); go();
+  });
+  pop.addEventListener("click", function(e){ if (e.target === pop) close(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") close(); });
+
+  setTimeout(function(){ pop.classList.add("show"); }, DELAY_MS);
+})();
+</script>
+<!-- ============ end Badger Mind workshop popup ============ -->
+
 </body>
 </html>
